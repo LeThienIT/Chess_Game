@@ -1,0 +1,13 @@
+*{
+	-fx-font-family: "CMU Serif Roman";
+	-fx-font-smoothing-type: gray;
+}
+.start-button{
+	-fx-font-size: 35;
+}
+.menu-bar{
+	-fx-font-size: 15;
+}
+.text-area{
+	-fx-font-size: 20;
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controllers.MainController">
+    <top>
+        <MenuBar fx:id="menuBar" styleClass="menu-bar" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem id="loadMenuItem" mnemonicParsing="false" onAction="#handleLoadFileAction" text="Load" />
+                  <MenuItem id="saveMenuItem" mnemonicParsing="false" onAction="#handleSaveFileAction" text="Save" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Game">
+                    <items>
+                  <MenuItem mnemonicParsing="false" onAction="#undoAction" text="Undo" />
+                  <MenuItem id="restartMenuItem" mnemonicParsing="false" onAction="#restartGame" text="Restart" />
+                  <MenuItem mnemonicParsing="false" onAction="#loadFenMenuItem" text="Load FEN " />
+                  <MenuItem mnemonicParsing="false" onAction="#exportFenMenuItem" text="Export FEN" />
+                    </items>
+                </Menu>
+            <Menu mnemonicParsing="false" text="Settings">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Difficulty">
+                     <graphic>
+                        <Slider id="moveSpeedSlider" fx:id="moveSpeedSlider" majorTickUnit="10.0" minorTickCount="0" showTickMarks="true" snapToTicks="true" value="100.0" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#boardColourMenuItem" text="Change Board Theme" />
+              </items>
+            </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+   <right>
+      <AnchorPane prefHeight="571.0" prefWidth="167.0" BorderPane.alignment="CENTER">
+         <children>
+              <TextArea fx:id="pgnTextField" editable="false" layoutX="20.0" prefHeight="571.0" prefWidth="167.0" styleClass="text-area" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+   </right>
+   <center>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+         <children>
+                <Canvas fx:id="chessPane" height="504.0" layoutX="-2.0" layoutY="-4.0" width="503.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-4.0" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
